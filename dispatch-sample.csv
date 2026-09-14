@@ -1,0 +1,7 @@
+Job ID,Client,Service,Priority,Assigned,ETA,Status,SLA
+D-1048,Northstar Property Group,Emergency HVAC,Urgent,Maya Chen,12 min,En Route,At Risk
+D-1047,Harbor Dental,Electrical Inspection,High,Luis Ortega,28 min,Assigned,On Track
+D-1046,Juniper Cafe,Refrigeration,Normal,Avery Brooks,42 min,En Route,On Track
+D-1045,Westline Fitness,Plumbing,High,Nina Patel,18 min,On Site,On Track
+D-1044,Beacon Studios,Generator Check,Normal,Marcus Lee,55 min,Assigned,On Track
+D-1043,Oak & Main Retail,AC Maintenance,Normal,Sofia Grant,Completed,Completed,Met

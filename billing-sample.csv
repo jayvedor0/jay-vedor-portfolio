@@ -1,0 +1,7 @@
+Invoice,Client,Amount,Due Date,Status,Age,Last Follow-up,Next Action
+INV-2084,Northstar Property Group,$6400,2026-09-18,Open,0-30,2026-09-13,Reminder Sep 17
+INV-2081,Harbor Dental,$2750,2026-09-11,Overdue,0-30,2026-09-14,Call today
+INV-2078,Juniper Cafe,$1850,2026-08-30,Overdue,31-60,2026-09-12,Escalate
+INV-2074,Westline Fitness,$4200,2026-09-20,Open,0-30,2026-09-10,Reminder Sep 18
+INV-2069,Beacon Studios,$9600,2026-09-05,Partial,0-30,2026-09-13,Confirm balance
+INV-2061,Oak & Main Retail,$3200,2026-08-07,Paid,31-60,2026-08-08,Closed
