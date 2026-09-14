@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jay Vedor | Operations Tracker Sample</title>
+<style>
+:root{--bg:#f5f7fa;--panel:#fff;--text:#1f2933;--muted:#647482;--line:#dbe3ea;--navy:#17324d;--blue:#2c628b;--green:#227a52;--amber:#9a6800;--red:#a43b3b}
+@media(prefers-color-scheme:dark){:root{--bg:#0f171e;--panel:#15212a;--text:#eef4f8;--muted:#aab8c3;--line:#2d404f;--navy:#9cc5ea;--blue:#76a9d4;--green:#6cc59c;--amber:#e8bd62;--red:#ef8f8f}}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}.wrap{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:38px 0 56px}.top{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:24px}.top h1{margin:0;font-size:30px}.top p{margin:6px 0 0;color:var(--muted)}.badge{font-size:12px;font-weight:700;color:var(--navy);border:1px solid var(--line);background:var(--panel);padding:8px 10px;border-radius:7px}.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0}.kpi{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px}.kpi .label{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.7px}.kpi .value{font-size:28px;font-weight:800;margin-top:4px}.section{background:var(--panel);border:1px solid var(--line);border-radius:10px;margin-top:14px;overflow:hidden}.section h2{font-size:16px;margin:0;padding:16px 18px;border-bottom:1px solid var(--line);color:var(--navy)}.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:900px}th,td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;font-size:13px}th{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.5px;background:color-mix(in srgb,var(--panel) 86%,var(--bg))}.pill{display:inline-block;padding:4px 8px;border-radius:999px;font-size:11px;font-weight:700}.urgent{background:rgba(164,59,59,.14);color:var(--red)}.high{background:rgba(154,104,0,.14);color:var(--amber)}.normal{background:rgba(44,98,139,.12);color:var(--blue)}.done{background:rgba(34,122,82,.13);color:var(--green)}.note{font-size:12px;color:var(--muted);margin-top:14px}@media(max-width:760px){.top{align-items:flex-start;flex-direction:column}.kpis{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body><main class="wrap">
+<div class="top"><div><h1>Executive Operations Command Center</h1><p>Portfolio sample • fictional/anonymized data</p></div><div class="badge">Built to show workflow organization</div></div>
+<div class="kpis"><div class="kpi"><div class="label">Open Tasks</div><div class="value">11</div></div><div class="kpi"><div class="label">Due Today</div><div class="value">4</div></div><div class="kpi"><div class="label">Billing Follow-Ups</div><div class="value">5</div></div><div class="kpi"><div class="label">Priority Items</div><div class="value">3</div></div></div>
+<section class="section"><h2>Priority Queue</h2><div class="table-wrap"><table><thead><tr><th>Priority</th><th>Client / Lead</th><th>Type</th><th>Status</th><th>Next Action</th><th>Due</th><th>Owner</th></tr></thead><tbody>
+<tr><td><span class="pill urgent">Urgent</span></td><td>Client A</td><td>Billing</td><td>Awaiting Payment</td><td>Follow up on replenishment</td><td>Today</td><td>Jay</td></tr>
+<tr><td><span class="pill urgent">Urgent</span></td><td>Lead B</td><td>Consultation</td><td>Needs Booking</td><td>Confirm availability</td><td>Today</td><td>Jay</td></tr>
+<tr><td><span class="pill high">High</span></td><td>Client C</td><td>Document</td><td>Pending Review</td><td>Route document to legal team</td><td>Tomorrow</td><td>Jay</td></tr>
+<tr><td><span class="pill high">High</span></td><td>Client D</td><td>Follow-Up</td><td>Waiting on Client</td><td>Send reminder email</td><td>Tomorrow</td><td>Jay</td></tr>
+<tr><td><span class="pill normal">Normal</span></td><td>Lead E</td><td>CRM</td><td>Contacted</td><td>Second follow-up</td><td>Sep 18</td><td>Jay</td></tr>
+</tbody></table></div></section>
+<section class="section"><h2>Billing & Follow-Up Snapshot</h2><div class="table-wrap"><table><thead><tr><th>Account</th><th>Balance / Amount</th><th>Last Contact</th><th>Status</th><th>Next Step</th></tr></thead><tbody>
+<tr><td>Client A</td><td>$2,500</td><td>Sep 14</td><td>Payment Requested</td><td>Follow up by phone</td></tr>
+<tr><td>Client F</td><td>$1,000</td><td>Sep 13</td><td>Invoice Sent</td><td>Check payment status</td></tr>
+<tr><td>Client G</td><td>$3,000</td><td>Sep 12</td><td><span class="pill done">Resolved</span></td><td>Close follow-up</td></tr>
+</tbody></table></div></section>
+<p class="note">This sample uses fictional records and is intended only to demonstrate organization, prioritization, follow-up tracking, and reporting.</p>
+</main></body></html>

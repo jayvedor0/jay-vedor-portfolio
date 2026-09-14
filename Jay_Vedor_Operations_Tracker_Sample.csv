@@ -1,0 +1,11 @@
+Priority,Client_or_Lead,Type,Status,Owner,Last_Contact,Next_Action,Due_Date,Amount,Notes
+Urgent,Client A,Billing,Awaiting Payment,Jay,2026-09-14,Follow up on replenishment,2026-09-14,2500,Fictional portfolio data
+Urgent,Lead B,Consultation,Needs Booking,Jay,2026-09-14,Confirm availability,2026-09-14,,Fictional portfolio data
+High,Client C,Document,Pending Review,Jay,2026-09-13,Route document to legal team,2026-09-15,,Fictional portfolio data
+High,Client D,Follow-Up,Waiting on Client,Jay,2026-09-13,Send reminder email,2026-09-15,,Fictional portfolio data
+Normal,Lead E,CRM,Contacted,Jay,2026-09-12,Second follow-up,2026-09-18,,Fictional portfolio data
+Normal,Client F,Billing,Invoice Sent,Jay,2026-09-13,Check payment status,2026-09-16,1000,Fictional portfolio data
+Normal,Client G,Billing,Resolved,Jay,2026-09-12,Close follow-up,2026-09-14,3000,Fictional portfolio data
+Normal,Lead H,Lead Follow-Up,Reached,Jay,2026-09-11,Send consultation options,2026-09-16,,Fictional portfolio data
+High,Client I,Calendar,Needs Reschedule,Jay,2026-09-14,Confirm new meeting time,2026-09-14,,Fictional portfolio data
+Normal,Client J,Inbox,Waiting on Reply,Jay,2026-09-13,Review thread and follow up,2026-09-17,,Fictional portfolio data
