@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Jay Vedor - Executive VA, Legal Administration and Operations Support portfolio." />
+  <title>Jay Vedor | Executive VA & Legal Administration</title>
+  <script>
+    (() => {
+      try {
+        const saved = localStorage.getItem('jay-portfolio-theme');
+        if (saved === 'light' || saved === 'dark') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      } catch (_) {}
+    })();
+  </script>
+  <style>
+    :root {
+      --navy: #17324d;
+      --navy-2: #244967;
+      --charcoal: #1f2933;
+      --muted: #637381;
+      --line: #d9e0e6;
+      --soft: #f4f6f8;
+      --white: #ffffff;
+      --panel: #ffffff;
+      --surface: #ffffff;
+      --header: rgba(255,255,255,.96);
+      --contact: #17324d;
+      --contact-text: #d9e5ee;
+      --shadow: rgba(15, 23, 42, .18);
+      --max: 1080px;
+    }
+    html[data-theme="dark"] {
+      --navy: #e5c66a;
+      --navy-2: #c9a227;
+      --charcoal: #f5f1e6;
+      --muted: #b2aa96;
+      --line: rgba(212,175,55,.22);
+      --soft: #17140d;
+      --white: #0b0b09;
+      --panel: #11110e;
+      --surface: #090907;
+      --header: rgba(9,9,7,.94);
+      --contact: #151109;
+      --contact-text: #d7ccb0;
+      --shadow: rgba(0,0,0,.52);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--charcoal);
+      background: var(--surface);
+      line-height: 1.6;
+      transition: background-color .18s ease, color .18s ease;
+    }
+    html[data-theme="dark"] body { background: radial-gradient(circle at 78% -12%, rgba(212,175,55,.09), transparent 30%), var(--surface); }
+    a { color: inherit; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .topbar { border-bottom: 1px solid var(--line); background: var(--header); position: sticky; top: 0; z-index: 10; backdrop-filter: blur(10px); }
+    .topbar .wrap { display: flex; justify-content: space-between; align-items: center; min-height: 64px; gap: 20px; }
+    .brand { font-weight: 700; color: var(--navy); letter-spacing: .2px; text-decoration: none; white-space: nowrap; }
+    .nav-area { display: flex; align-items: center; gap: 14px; min-width: 0; }
+    nav { display: flex; gap: 16px; flex-wrap: wrap; }
+    nav a { font-size: 14px; text-decoration: none; color: var(--muted); }
+    nav a:hover { color: var(--navy); }
+    .theme-controls { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 8px; padding: 3px; background: var(--soft); }
+    .theme-button { border: 0; background: transparent; color: var(--muted); font: inherit; font-size: 12px; font-weight: 700; padding: 6px 8px; border-radius: 5px; cursor: pointer; }
+    .theme-button[aria-pressed="true"] { background: var(--panel); color: var(--navy); box-shadow: 0 1px 3px var(--shadow); }
+    .hero { padding: 82px 0 72px; }
+    .eyebrow { color: var(--navy-2); font-weight: 700; font-size: 14px; letter-spacing: 1.6px; text-transform: uppercase; }
+    h1 { margin: 10px 0 12px; font-size: clamp(42px, 7vw, 76px); line-height: 1.02; letter-spacing: -2px; }
+    .hero h2 { margin: 0; font-size: clamp(22px, 3vw, 34px); color: var(--navy); font-weight: 600; }
+    .hero p { max-width: 760px; margin: 24px 0 28px; font-size: 18px; color: var(--muted); }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 18px; border-radius: 7px; border: 1px solid var(--navy); text-decoration: none; font-weight: 700; font-size: 14px; }
+    .button.primary { background: var(--navy); color: var(--white); }
+    html[data-theme="dark"] .button.primary { color: #0b0b09; }
+    .button.secondary { background: var(--panel); color: var(--navy); }
+    button.button { font: inherit; cursor: pointer; }
+    section { padding: 64px 0; border-top: 1px solid var(--line); }
+    .section-heading { display: grid; grid-template-columns: 220px 1fr; gap: 34px; align-items: start; margin-bottom: 32px; }
+    .section-heading h3 { margin: 0; font-size: 16px; text-transform: uppercase; letter-spacing: 1.4px; color: var(--navy); }
+    .section-heading p { margin: 0; color: var(--muted); max-width: 760px; }
+    .grid { display: grid; gap: 18px; }
+    .services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .card { border: 1px solid var(--line); border-radius: 10px; padding: 24px; background: var(--panel); }
+    .card h4 { margin: 0 0 8px; color: var(--navy); font-size: 20px; }
+    .card p { margin: 0; color: var(--muted); }
+
+    .tool-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+    .tool-item { display: flex; align-items: center; gap: 11px; min-height: 64px; border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; background: var(--panel); }
+    .tool-logo-wrap { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 8px; background: var(--soft); flex: 0 0 34px; }
+    .tool-logo { width: 22px; height: 22px; object-fit: contain; }
+    .tool-fallback { display: none; font-size: 11px; font-weight: 800; color: var(--navy); }
+    .tool-item strong { display: block; font-size: 14px; line-height: 1.25; }
+    .tool-item span.category { display: block; color: var(--muted); font-size: 11px; margin-top: 2px; }
+
+    .work-suite { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .project-card { --accent: var(--navy); position: relative; overflow: hidden; min-height: 510px; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 20px; background: var(--panel); box-shadow: 0 18px 55px rgba(15,23,42,.06); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+    .project-card::before { content: ""; position: absolute; inset: 0 0 auto; height: 3px; background: linear-gradient(90deg, var(--accent), transparent 90%); }
+    .project-card::after { content: ""; position: absolute; width: 220px; height: 220px; right: -90px; top: -110px; border-radius: 50%; background: color-mix(in srgb, var(--accent) 12%, transparent); filter: blur(6px); pointer-events: none; }
+    .project-card:hover { transform: translateY(-5px); border-color: color-mix(in srgb, var(--accent) 40%, var(--line)); box-shadow: 0 24px 70px rgba(15,23,42,.12); }
+    .project-body { padding: 20px 20px 0; position: relative; z-index: 1; }
+    .project-topline { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+    .project-icon { width: 39px; height: 39px; border-radius: 12px; display: grid; place-items: center; background: color-mix(in srgb, var(--accent) 12%, var(--soft)); color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 26%, var(--line)); font-weight: 900; }
+    .project-code { color: var(--muted); font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+    .project-card h4 { margin: 0 0 7px; font-size: 22px; letter-spacing: -.45px; }
+    .project-card p { margin: 0; color: var(--muted); font-size: 14px; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 13px; }
+    .project-tag { padding: 5px 7px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: var(--soft); font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: .55px; }
+    .project-preview { position: relative; margin: 18px 12px 0; height: 210px; overflow: hidden; border-radius: 15px 15px 0 0; border: 1px solid color-mix(in srgb, var(--accent) 22%, #2d3340); border-bottom: 0; background: #090d13; color: #f8fafc; box-shadow: 0 18px 35px rgba(0,0,0,.2); }
+    .preview-bar { height: 31px; display: flex; align-items: center; gap: 5px; padding: 0 10px; background: #0d121a; border-bottom: 1px solid #1e2732; }
+    .preview-dot { width: 6px; height: 6px; border-radius: 50%; background: #33404f; }
+    .preview-dot:first-child { background: var(--accent); }
+    .preview-screen { padding: 11px; }
+    .preview-kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+    .preview-kpi { border: 1px solid #1b2530; border-radius: 8px; padding: 7px; background: #0c1118; }
+    .preview-kpi span { display: block; color: #667488; font-size: 7px; text-transform: uppercase; letter-spacing: .6px; }
+    .preview-kpi b { display: block; font-size: 14px; margin-top: 2px; }
+    .preview-list { display: grid; gap: 6px; margin-top: 9px; }
+    .preview-row { display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: center; padding: 7px; border-radius: 8px; border: 1px solid #18212b; background: #0b1016; }
+    .preview-row strong { font-size: 8px; }
+    .preview-row small { display: block; color: #657487; font-size: 7px; margin-top: 2px; }
+    .preview-status { padding: 4px 6px; border-radius: 6px; background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent); font-size: 7px; font-weight: 900; white-space: nowrap; }
+    .preview-bars { display: flex; align-items: end; gap: 7px; height: 76px; margin-top: 8px; padding: 0 7px; }
+    .preview-bars i { flex: 1; min-width: 7px; border-radius: 5px 5px 2px 2px; background: linear-gradient(180deg, var(--accent), color-mix(in srgb, var(--accent) 34%, #101720)); opacity: .9; }
+    .preview-donut { width: 72px; aspect-ratio: 1; border-radius: 50%; margin: 11px auto 0; background: conic-gradient(var(--accent) 0 68%, #24303b 68% 88%, #151e27 88% 100%); position: relative; }
+    .preview-donut::after { content: "$48K"; position: absolute; inset: 13px; border-radius: 50%; background: #0b1016; display: grid; place-items: center; font-size: 10px; font-weight: 900; }
+    .project-actions { margin-top: auto; padding: 16px 20px 20px; display: flex; flex-wrap: wrap; gap: 8px; border-top: 1px solid var(--line); background: color-mix(in srgb, var(--soft) 50%, transparent); position: relative; z-index: 2; }
+    .project-link { min-height: 38px; display: inline-flex; align-items: center; justify-content: center; padding: 0 12px; border-radius: 9px; border: 1px solid var(--line); color: var(--charcoal); text-decoration: none; font-size: 11px; font-weight: 800; background: var(--panel); }
+    .project-link.primary { border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); color: var(--accent); }
+    .project-link:hover { background: var(--soft); }
+    html[data-theme="dark"] .project-card { box-shadow: 0 24px 70px rgba(0,0,0,.26); }
+    html[data-theme="dark"] .project-link.primary { background: rgba(212,175,55,.04); }
+    .text-link { color: var(--navy); font-weight: 700; text-decoration: none; }
+    .text-link:hover { text-decoration: underline; }
+    .contact-box { background: var(--contact); color: #fff; border-radius: 12px; padding: 36px; display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: center; }
+    .contact-box h3 { margin: 0 0 8px; font-size: 30px; }
+    .contact-box p { margin: 0; color: var(--contact-text); }
+    .contact-box .button { border-color: #fff; color: #fff; }
+    .contact-box button.button { background: transparent; }
+    footer { padding: 28px 0 40px; color: var(--muted); font-size: 13px; }
+    .small-note { margin-top: 14px; color: var(--muted); font-size: 13px; }
+
+    .email-modal[hidden] { display: none; }
+    .email-modal { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 20px; background: rgba(15, 23, 42, .64); }
+    .email-panel { width: min(520px, 100%); background: var(--panel); color: var(--charcoal); border-radius: 14px; border: 1px solid var(--line); box-shadow: 0 20px 60px var(--shadow); padding: 26px; }
+    .email-panel-head { display: flex; justify-content: space-between; gap: 20px; align-items: flex-start; margin-bottom: 18px; }
+    .email-panel h3 { margin: 0 0 4px; color: var(--navy); font-size: 24px; }
+    .email-panel p { margin: 0; color: var(--muted); }
+    .modal-close { border: 0; background: var(--soft); color: var(--charcoal); border-radius: 7px; width: 40px; height: 40px; cursor: pointer; font-size: 22px; line-height: 1; }
+    .email-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .email-option { min-height: 48px; display: flex; align-items: center; justify-content: center; padding: 10px 14px; border: 1px solid var(--line); border-radius: 8px; text-decoration: none; font-weight: 700; color: var(--navy); background: var(--panel); cursor: pointer; font: inherit; }
+    .email-option:hover, .email-option:focus-visible { border-color: var(--navy); background: var(--soft); }
+    .email-address { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
+    .email-address strong { color: var(--charcoal); }
+    .copy-status { margin-top: 8px; min-height: 22px; font-size: 13px; color: var(--navy); }
+
+    @media (max-width: 980px) { .work-suite { grid-template-columns: 1fr; } .project-card { min-height: 0; } .tool-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    @media (max-width: 760px) {
+      .topbar { position: static; }
+      .topbar .wrap { align-items: flex-start; flex-direction: column; padding: 14px 0; gap: 10px; }
+      .nav-area { width: 100%; flex-direction: column; align-items: flex-start; gap: 10px; }
+      nav { gap: 12px; }
+      .theme-controls { align-self: flex-start; }
+      .hero { padding: 56px 0 48px; }
+      h1 { letter-spacing: -1px; }
+      .section-heading { grid-template-columns: 1fr; gap: 10px; }
+      .services, .work-suite { grid-template-columns: 1fr; }
+      .tool-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .contact-box { grid-template-columns: 1fr; padding: 28px; }
+      .email-options { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 440px) { .tool-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="#top">Jay Vedor</a>
+      <div class="nav-area">
+        <nav aria-label="Primary navigation">
+          <a href="#services">What I Do</a>
+          <a href="#tools">Tools</a>
+          <a href="#work">Work Samples</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="theme-controls" id="themeControls" aria-label="Color theme">
+          <button class="theme-button" type="button" data-theme-choice="light" aria-pressed="false">Light</button>
+          <button class="theme-button" type="button" data-theme-choice="dark" aria-pressed="false">Dark</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" style="border-top:0">
+      <div class="wrap">
+        <div class="eyebrow">Executive Support • Legal Administration • Operations</div>
+        <h1>Jay Vedor</h1>
+        <h2>Executive VA | Legal Administration | Operations Support</h2>
+        <p>I have 7+ years of experience supporting U.S. and North American clients across legal services, customer support, healthcare, sales, and administration. Most recently, I supported a U.S. family law firm with executive inbox and calendar management, client communication, billing, trust account follow-ups, document organization, scheduling, and day-to-day administrative work.</p>
+        <div class="actions">
+          <a class="button primary" href="Jay_Vedor_Resume.pdf" target="_blank" rel="noopener">View Resume</a>
+          <a class="button secondary" href="https://www.linkedin.com/in/jay-vedor-66624a238/" target="_blank" rel="noopener">LinkedIn</a>
+          <button class="button secondary email-trigger" type="button">Email Me</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-heading">
+          <h3>What I Do</h3>
+          <p>I focus on the work that keeps a business organized, clients informed, and day-to-day operations moving.</p>
+        </div>
+        <div class="grid services">
+          <article class="card"><h4>Executive Support</h4><p>I support business owners and senior team members with inbox management, calendar coordination, scheduling, follow-ups, documents, and day-to-day admin. I’m comfortable working independently and keeping priorities organized without needing constant supervision.</p></article>
+          <article class="card"><h4>Legal Administration</h4><p>I have experience supporting a U.S. family law firm with client communication, legal document organization, scheduling, billing, trust account follow-ups, and coordination with the legal team. I also worked with tools such as Clio and LawPay.</p></article>
+          <article class="card"><h4>Operations Support</h4><p>I help keep daily workflows organized through spreadsheets, CRM updates, task tracking, billing follow-ups, documentation, and internal coordination. I’m used to handling several moving parts and making sure important items don’t get missed.</p></article>
+          <article class="card"><h4>Client Communication</h4><p>I have several years of experience working with U.S. and North American clients by phone, email, and messaging platforms. My work has included answering questions, scheduling appointments, explaining billing, handling concerns, following up, and keeping clients updated.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="tools">
+      <div class="wrap">
+        <div class="section-heading">
+          <h3>Tools I Use</h3>
+          <p>Tools I’ve used for executive support, legal administration, client communication, CRM work, and content support.</p>
+        </div>
+        <div class="tool-grid">
+          <div class="tool-item"><span class="tool-logo-wrap"><img class="tool-logo" src="https://cdn.simpleicons.org/googleworkspace" alt="Google Workspace logo"><span class="tool-fallback">GW</span></span><div><strong>Google Workspace</strong><span class="category">Admin</span></div></div>
+          <div class="tool-item"><span class="tool-logo-wrap"><img class="tool-logo" src="https://cdn.simpleicons.org/microsoft" alt="Microsoft logo"><span class="tool-fallback">MS</span></span><div><strong>Microsoft Office</strong><span class="category">Admin</span></div></div>
+          <div class="tool-item"><span class="tool-logo-wrap"><img class="tool-logo" src="https://cdn.simpleicons.org/slack" alt="Slack logo"><span class="tool-fallback">SL</span></span><div><strong>Slack</strong><span class="category">Communication</span></div></div>
+          <div class="tool-item"><span class="tool-logo-wrap"><img class="tool-logo" src="https://cdn.simpleicons.org/trello" alt="Trello logo"><span class="tool-fallback">TR</span></span><div><strong>Trello</strong><span class="category">Coordination</span></div></div>
+          <div class="tool-item"><span class="tool-logo-wrap"><img class="tool-logo" src="https://cdn.simpleicons.org/zoom" alt="Zoom logo"><span class="tool-fallback">ZM</span></span><div><strong>Zoom</strong><span class="category">Communication</span></div></div>
+          <div class="tool-item"><span class="tool-logo-wrap"><img class="tool-logo" src="https://cdn.simpleicons.org/openphone" alt="OpenPhone logo"><span class="tool-fallback">OP</span></span><div><strong>OpenPhone</strong><span class="category">Communication</span></div></div>
+          <div class="tool-item"><span class="tool-logo-wrap"><img class="tool-logo" src="https://cdn.simpleicons.org/clio" alt="Clio logo"><span class="tool-fallback">CL</span></span><div><strong>Clio</strong><span class="category">Legal</span></div></div>
+          <div class="tool-item"><span class="tool-logo-wrap"><img class="tool-logo" src="https://cdn.simpleicons.org/gohighlevel" alt="GoHighLevel logo"><span class="tool-fallback">GHL</span></span><div><strong>GoHighLevel</strong><span class="category">CRM</span></div></div>
+          <div class="tool-item"><span class="tool-logo-wrap"><img class="tool-logo" src="https://cdn.simpleicons.org/salesforce" alt="Salesforce logo"><span class="tool-fallback">SF</span></span><div><strong>Salesforce</strong><span class="category">CRM</span></div></div>
+          <div class="tool-item"><span class="tool-logo-wrap"><img class="tool-logo" src="https://cdn.simpleicons.org/zendesk" alt="Zendesk logo"><span class="tool-fallback">ZD</span></span><div><strong>Zendesk</strong><span class="category">Support</span></div></div>
+          <div class="tool-item"><span class="tool-logo-wrap"><img class="tool-logo" src="https://cdn.simpleicons.org/jira" alt="Jira logo"><span class="tool-fallback">JR</span></span><div><strong>Jira</strong><span class="category">Workflow</span></div></div>
+          <div class="tool-item"><span class="tool-logo-wrap"><img class="tool-logo" src="https://cdn.simpleicons.org/activecampaign" alt="ActiveCampaign logo"><span class="tool-fallback">AC</span></span><div><strong>ActiveCampaign</strong><span class="category">Email</span></div></div>
+          <div class="tool-item"><span class="tool-logo-wrap"><img class="tool-logo" src="https://cdn.simpleicons.org/mailchimp" alt="Mailchimp logo"><span class="tool-fallback">MC</span></span><div><strong>Mailchimp</strong><span class="category">Email</span></div></div>
+          <div class="tool-item"><span class="tool-logo-wrap"><img class="tool-logo" src="https://cdn.simpleicons.org/canva" alt="Canva logo"><span class="tool-fallback">CV</span></span><div><strong>Canva</strong><span class="category">Content</span></div></div>
+          <div class="tool-item"><span class="tool-logo-wrap"><img class="tool-logo" src="https://cdn.simpleicons.org/adobephotoshop" alt="Adobe Photoshop logo"><span class="tool-fallback">PS</span></span><div><strong>Adobe Photoshop</strong><span class="category">Content</span></div></div>
+          <div class="tool-item"><span class="tool-logo-wrap"><img class="tool-logo" src="https://cdn.simpleicons.org/capcut" alt="CapCut logo"><span class="tool-fallback">CC</span></span><div><strong>CapCut</strong><span class="category">Content</span></div></div>
+          <div class="tool-item"><span class="tool-logo-wrap"><span class="tool-fallback" style="display:inline">LP</span></span><div><strong>LawPay</strong><span class="category">Legal / Billing</span></div></div>
+          <div class="tool-item"><span class="tool-logo-wrap"><span class="tool-fallback" style="display:inline">FX</span></span><div><strong>Filmora X</strong><span class="category">Content</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="wrap">
+        <div class="section-heading">
+          <h3>Selected Work</h3>
+          <p>Three interactive operations samples built as a unified suite, each with its own visual identity. Everything uses fictional demo data so no client or company information is exposed.</p>
+        </div>
+        <div class="work-suite">
+          <article class="project-card" style="--accent:#ffad42">
+            <div class="project-body">
+              <div class="project-topline"><div class="project-icon">D</div><span class="project-code">Live Ops / 01</span></div>
+              <h4>Dispatch Command Center</h4>
+              <p>Priority jobs, assignments, ETAs, field visibility and SLA risk in one operational view.</p>
+              <div class="project-tags"><span class="project-tag">Dispatch</span><span class="project-tag">SLA</span><span class="project-tag">Scheduling</span></div>
+            </div>
+            <div class="project-preview">
+              <div class="preview-bar"><i class="preview-dot"></i><i class="preview-dot"></i><i class="preview-dot"></i></div>
+              <div class="preview-screen"><div class="preview-kpis"><div class="preview-kpi"><span>Active</span><b>12</b></div><div class="preview-kpi"><span>Urgent</span><b>2</b></div><div class="preview-kpi"><span>SLA</span><b>94%</b></div></div><div class="preview-list"><div class="preview-row"><div><strong>D-1048 · Emergency HVAC</strong><small>Maya Chen · 12 min</small></div><span class="preview-status">En Route</span></div><div class="preview-row"><div><strong>D-1045 · Plumbing</strong><small>Nina Patel · On Site</small></div><span class="preview-status">On Site</span></div><div class="preview-row"><div><strong>D-1047 · Electrical</strong><small>Luis Ortega · 28 min</small></div><span class="preview-status">Assigned</span></div></div></div>
+            </div>
+            <div class="project-actions"><a class="project-link primary" href="dispatch-command-center.html" target="_blank" rel="noopener">Open Live Preview ↗</a><a class="project-link" href="dispatch-sample.csv">CSV</a></div>
+          </article>
+
+          <article class="project-card" style="--accent:#6ddcff">
+            <div class="project-body">
+              <div class="project-topline"><div class="project-icon">O</div><span class="project-code">Pipeline / 02</span></div>
+              <h4>Outreach Pipeline</h4>
+              <p>Contacts, touchpoints, response momentum, follow-ups and booked calls without warm leads getting buried.</p>
+              <div class="project-tags"><span class="project-tag">Outreach</span><span class="project-tag">CRM</span><span class="project-tag">Follow-up</span></div>
+            </div>
+            <div class="project-preview">
+              <div class="preview-bar"><i class="preview-dot"></i><i class="preview-dot"></i><i class="preview-dot"></i></div>
+              <div class="preview-screen"><div class="preview-kpis"><div class="preview-kpi"><span>Contacts</span><b>184</b></div><div class="preview-kpi"><span>Replies</span><b>37</b></div><div class="preview-kpi"><span>Booked</span><b>11</b></div></div><div class="preview-bars"><i style="height:24%"></i><i style="height:35%"></i><i style="height:31%"></i><i style="height:50%"></i><i style="height:44%"></i><i style="height:68%"></i><i style="height:58%"></i><i style="height:82%"></i><i style="height:74%"></i><i style="height:94%"></i></div></div>
+            </div>
+            <div class="project-actions"><a class="project-link primary" href="outreach-pipeline.html" target="_blank" rel="noopener">Open Live Preview ↗</a><a class="project-link" href="outreach-sample.csv">CSV</a></div>
+          </article>
+
+          <article class="project-card" style="--accent:#5fd49a">
+            <div class="project-body">
+              <div class="project-topline"><div class="project-icon">B</div><span class="project-code">Finance Ops / 03</span></div>
+              <h4>Billing Operations Hub</h4>
+              <p>Receivables, invoice status, aging, payment activity and a clean follow-up queue for accounts that need action.</p>
+              <div class="project-tags"><span class="project-tag">Billing</span><span class="project-tag">A/R</span><span class="project-tag">Follow-up</span></div>
+            </div>
+            <div class="project-preview">
+              <div class="preview-bar"><i class="preview-dot"></i><i class="preview-dot"></i><i class="preview-dot"></i></div>
+              <div class="preview-screen"><div class="preview-kpis"><div class="preview-kpi"><span>Tracked</span><b>$48K</b></div><div class="preview-kpi"><span>Overdue</span><b>$7.4K</b></div><div class="preview-kpi"><span>Current</span><b>91%</b></div></div><div class="preview-donut"></div></div>
+            </div>
+            <div class="project-actions"><a class="project-link primary" href="billing-operations-hub.html" target="_blank" rel="noopener">Open Live Preview ↗</a><a class="project-link" href="billing-sample.csv">CSV</a></div>
+          </article>
+        </div>
+        <p class="small-note">Built for the browser first. CSV downloads are available for people who want to inspect the underlying sample data without Microsoft Excel.</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact-box">
+          <div><h3>Need reliable support behind the scenes?</h3><p>I’m open to Executive VA, Legal VA, Administrative Assistant, and Operations Support opportunities.</p></div>
+          <div class="actions"><button class="button email-trigger" type="button">jayvedor0@gmail.com</button><a class="button" href="tel:+639194883857">+63 919 488 3857</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap">Bacolod City, Philippines • Available for remote work</div></footer>
+
+  <div class="email-modal" id="emailChooser" role="dialog" aria-modal="true" aria-labelledby="emailChooserTitle" hidden>
+    <div class="email-panel">
+      <div class="email-panel-head">
+        <div><h3 id="emailChooserTitle">Send Jay an email</h3><p>Choose the email service you prefer.</p></div>
+        <button class="modal-close" id="closeEmailChooser" type="button" aria-label="Close email options">×</button>
+      </div>
+      <div class="email-options">
+        <a class="email-option" href="https://mail.google.com/mail/?view=cm&fs=1&to=jayvedor0@gmail.com&su=Portfolio%20Inquiry" target="_blank" rel="noopener">Gmail</a>
+        <a class="email-option" href="https://outlook.office.com/mail/deeplink/compose?to=jayvedor0@gmail.com&subject=Portfolio%20Inquiry" target="_blank" rel="noopener">Outlook</a>
+        <a class="email-option" href="https://compose.mail.yahoo.com/?to=jayvedor0@gmail.com&subject=Portfolio%20Inquiry" target="_blank" rel="noopener">Yahoo Mail</a>
+        <a class="email-option" href="mailto:jayvedor0@gmail.com?subject=Portfolio%20Inquiry">Default Email App</a>
+        <button class="email-option" id="copyEmail" type="button">Copy Email Address</button>
+      </div>
+      <div class="email-address">Email: <strong>jayvedor0@gmail.com</strong></div>
+      <div class="copy-status" id="copyStatus" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      const chooser = document.getElementById('emailChooser');
+      const triggers = document.querySelectorAll('.email-trigger');
+      const closeButton = document.getElementById('closeEmailChooser');
+      const copyButton = document.getElementById('copyEmail');
+      const copyStatus = document.getElementById('copyStatus');
+      const email = 'jayvedor0@gmail.com';
+      let lastTrigger = null;
+
+      function openChooser(trigger) {
+        lastTrigger = trigger;
+        chooser.hidden = false;
+        document.body.style.overflow = 'hidden';
+        closeButton.focus();
+      }
+      function closeChooser() {
+        chooser.hidden = true;
+        document.body.style.overflow = '';
+        copyStatus.textContent = '';
+        if (lastTrigger) lastTrigger.focus();
+      }
+      triggers.forEach((trigger) => trigger.addEventListener('click', () => openChooser(trigger)));
+      closeButton.addEventListener('click', closeChooser);
+      chooser.addEventListener('click', (event) => { if (event.target === chooser) closeChooser(); });
+      document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && !chooser.hidden) closeChooser(); });
+      copyButton.addEventListener('click', async () => {
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(email);
+          } else {
+            const textarea = document.createElement('textarea');
+            textarea.value = email;
+            textarea.setAttribute('readonly', '');
+            textarea.style.position = 'absolute';
+            textarea.style.left = '-9999px';
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            textarea.remove();
+          }
+          copyStatus.textContent = 'Email address copied.';
+        } catch (_) {
+          copyStatus.textContent = 'Copy failed. Please use jayvedor0@gmail.com.';
+        }
+      });
+
+      const themeButtons = document.querySelectorAll('[data-theme-choice]');
+      const root = document.documentElement;
+      function setTheme(theme, save = true) {
+        root.setAttribute('data-theme', theme);
+        themeButtons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.themeChoice === theme)));
+        if (save) {
+          try { localStorage.setItem('jay-portfolio-theme', theme); } catch (_) {}
+        }
+      }
+      const currentTheme = root.getAttribute('data-theme') || 'dark';
+      setTheme(currentTheme, false);
+      themeButtons.forEach((button) => button.addEventListener('click', () => setTheme(button.dataset.themeChoice)));
+
+      document.querySelectorAll('.tool-logo').forEach((img) => {
+        img.addEventListener('error', () => {
+          img.style.display = 'none';
+          const fallback = img.parentElement.querySelector('.tool-fallback');
+          if (fallback) fallback.style.display = 'inline';
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
