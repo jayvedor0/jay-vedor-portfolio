@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Jay Vedor - Executive VA, Legal Administration and Operations Support portfolio." />
+  <title>Jay Vedor | Executive VA & Legal Administration</title>
+  <style>
+    :root {
+      --navy: #17324d;
+      --navy-2: #244967;
+      --charcoal: #1f2933;
+      --muted: #637381;
+      --line: #d9e0e6;
+      --soft: #f4f6f8;
+      --white: #ffffff;
+      --max: 1080px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--charcoal);
+      background: var(--white);
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .topbar { border-bottom: 1px solid var(--line); background: var(--white); position: sticky; top: 0; z-index: 10; }
+    .topbar .wrap { display: flex; justify-content: space-between; align-items: center; min-height: 62px; gap: 24px; }
+    .brand { font-weight: 700; color: var(--navy); letter-spacing: .2px; text-decoration: none; }
+    nav { display: flex; gap: 18px; flex-wrap: wrap; }
+    nav a { font-size: 14px; text-decoration: none; color: var(--muted); }
+    nav a:hover { color: var(--navy); }
+    .hero { padding: 82px 0 72px; }
+    .eyebrow { color: var(--navy-2); font-weight: 700; font-size: 14px; letter-spacing: 1.6px; text-transform: uppercase; }
+    h1 { margin: 10px 0 12px; font-size: clamp(42px, 7vw, 76px); line-height: 1.02; letter-spacing: -2px; }
+    .hero h2 { margin: 0; font-size: clamp(22px, 3vw, 34px); color: var(--navy); font-weight: 600; }
+    .hero p { max-width: 760px; margin: 24px 0 28px; font-size: 18px; color: var(--muted); }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 18px; border-radius: 7px; border: 1px solid var(--navy); text-decoration: none; font-weight: 700; font-size: 14px; }
+    .button.primary { background: var(--navy); color: var(--white); }
+    .button.secondary { background: var(--white); color: var(--navy); }
+    section { padding: 64px 0; border-top: 1px solid var(--line); }
+    .section-heading { display: grid; grid-template-columns: 220px 1fr; gap: 34px; align-items: start; margin-bottom: 32px; }
+    .section-heading h3 { margin: 0; font-size: 16px; text-transform: uppercase; letter-spacing: 1.4px; color: var(--navy); }
+    .section-heading p { margin: 0; color: var(--muted); max-width: 760px; }
+    .grid { display: grid; gap: 18px; }
+    .services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .card { border: 1px solid var(--line); border-radius: 10px; padding: 24px; background: var(--white); }
+    .card h4 { margin: 0 0 8px; color: var(--navy); font-size: 20px; }
+    .card p { margin: 0; color: var(--muted); }
+    .tools { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .tool-group { background: var(--soft); border-radius: 10px; padding: 22px; }
+    .tool-group h4 { margin: 0 0 10px; color: var(--navy); font-size: 15px; text-transform: uppercase; letter-spacing: .7px; }
+    .tool-group p { margin: 0; color: #465767; }
+    .work { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .work-card { border-top: 3px solid var(--navy); padding-top: 18px; }
+    .work-card h4 { margin: 0 0 7px; font-size: 18px; }
+    .work-card p { margin: 0 0 12px; color: var(--muted); }
+    .text-link { color: var(--navy); font-weight: 700; text-decoration: none; }
+    .text-link:hover { text-decoration: underline; }
+    .contact-box { background: var(--navy); color: var(--white); border-radius: 12px; padding: 36px; display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: center; }
+    .contact-box h3 { margin: 0 0 8px; font-size: 30px; }
+    .contact-box p { margin: 0; color: #d9e5ee; }
+    .contact-box .button { border-color: var(--white); color: var(--white); }
+    footer { padding: 28px 0 40px; color: var(--muted); font-size: 13px; }
+    .small-note { margin-top: 14px; color: var(--muted); font-size: 13px; }
+    @media (max-width: 760px) {
+      .topbar { position: static; }
+      .topbar .wrap { align-items: flex-start; flex-direction: column; padding: 16px 0; gap: 10px; }
+      nav { gap: 12px; }
+      .hero { padding: 56px 0 48px; }
+      h1 { letter-spacing: -1px; }
+      .section-heading { grid-template-columns: 1fr; gap: 10px; }
+      .services, .tools, .work { grid-template-columns: 1fr; }
+      .contact-box { grid-template-columns: 1fr; padding: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="#top">Jay Vedor</a>
+      <nav aria-label="Primary navigation">
+        <a href="#services">What I Do</a>
+        <a href="#tools">Tools</a>
+        <a href="#work">Work Samples</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" style="border-top:0">
+      <div class="wrap">
+        <div class="eyebrow">Executive Support • Legal Administration • Operations</div>
+        <h1>Jay Vedor</h1>
+        <h2>Executive VA | Legal Administration | Operations Support</h2>
+        <p>
+          I have 7+ years of experience supporting U.S. and North American clients across legal services,
+          customer support, healthcare, sales, and administration. Most recently, I supported a U.S. family law
+          firm with executive inbox and calendar management, client communication, billing, trust account follow-ups,
+          document organization, scheduling, and day-to-day administrative work.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="Jay_Vedor_Resume.pdf">View Resume</a>
+          <a class="button secondary" href="https://www.linkedin.com/in/jay-vedor-66624a238/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="button secondary" href="mailto:jayvedor0@gmail.com">Email Me</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-heading">
+          <h3>What I Do</h3>
+          <p>I focus on the work that keeps a business organized, clients informed, and day-to-day operations moving.</p>
+        </div>
+        <div class="grid services">
+          <article class="card">
+            <h4>Executive Support</h4>
+            <p>I support business owners and senior team members with inbox management, calendar coordination, scheduling, follow-ups, documents, and day-to-day admin. I’m comfortable working independently and keeping priorities organized without needing constant supervision.</p>
+          </article>
+          <article class="card">
+            <h4>Legal Administration</h4>
+            <p>I have experience supporting a U.S. family law firm with client communication, legal document organization, scheduling, billing, trust account follow-ups, and coordination with the legal team. I also worked with tools such as Clio and LawPay.</p>
+          </article>
+          <article class="card">
+            <h4>Operations Support</h4>
+            <p>I help keep daily workflows organized through spreadsheets, CRM updates, task tracking, billing follow-ups, documentation, and internal coordination. I’m used to handling several moving parts and making sure important items don’t get missed.</p>
+          </article>
+          <article class="card">
+            <h4>Client Communication</h4>
+            <p>I have several years of experience working with U.S. and North American clients by phone, email, and messaging platforms. My work has included answering questions, scheduling appointments, explaining billing, handling concerns, following up, and keeping clients updated.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="tools">
+      <div class="wrap">
+        <div class="section-heading">
+          <h3>Tools</h3>
+          <p>Systems I’ve used in daily administrative, legal, client support, and communication workflows.</p>
+        </div>
+        <div class="grid tools">
+          <div class="tool-group">
+            <h4>Admin & Collaboration</h4>
+            <p>Google Workspace, Microsoft Office, Slack, Trello, Zoom, OpenPhone</p>
+          </div>
+          <div class="tool-group">
+            <h4>Legal & CRM</h4>
+            <p>Clio, LawPay, GoHighLevel, Salesforce, Zendesk, Jira</p>
+          </div>
+          <div class="tool-group">
+            <h4>Marketing & Content</h4>
+            <p>ActiveCampaign, Mailchimp, Canva, Adobe Photoshop, CapCut, Filmora X</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="wrap">
+        <div class="section-heading">
+          <h3>Selected Work</h3>
+          <p>Examples are anonymized or recreated with fictional data so no client or firm information is exposed.</p>
+        </div>
+        <div class="grid work">
+          <article class="work-card">
+            <h4>Operations Tracker</h4>
+            <p>A sample workbook showing billing follow-ups, client follow-ups, lead tracking, and a simple overview dashboard.</p>
+            <a class="text-link" href="Jay_Vedor_Anonymized_Operations_Tracker.xlsx">Open sample workbook →</a>
+          </article>
+          <article class="work-card">
+            <h4>Executive Inbox Workflow</h4>
+            <p>My approach is to prioritize urgent and revenue/client-impact items, respond or route what can be handled, and track anything that needs a follow-up so important messages do not get buried.</p>
+          </article>
+          <article class="work-card">
+            <h4>Billing & Client Follow-Up</h4>
+            <p>I’ve handled invoice follow-ups, trust account monitoring, billing explanations, client updates, and spreadsheet tracking while coordinating with the legal team.</p>
+          </article>
+        </div>
+        <p class="small-note">Additional writing, newsletter, and content samples can be shared when relevant to a role.</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact-box">
+          <div>
+            <h3>Need reliable support behind the scenes?</h3>
+            <p>I’m open to Executive VA, Legal VA, Administrative Assistant, and Operations Support opportunities.</p>
+          </div>
+          <div class="actions">
+            <a class="button" href="mailto:jayvedor0@gmail.com">jayvedor0@gmail.com</a>
+            <a class="button" href="tel:+639194883857">+63 919 488 3857</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Bacolod City, Philippines • Available for remote work</div>
+  </footer>
+</body>
+</html>
