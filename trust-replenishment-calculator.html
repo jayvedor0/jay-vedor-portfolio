@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trust Replenishment Calculator | Jay Vedor</title>
+<meta name="description" content="A working tool by Jay Vedor: calculate a client trust replenishment from balance, unbilled work, and upcoming events, then copy a client-ready text or email.">
+<meta name="theme-color" content="#14213d">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/schibsted-grotesk-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/samples.css">
+<script>document.documentElement.className = 'js';</script>
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/calculator.js" defer></script>
+</head>
+<body class="sample">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">Jay Vedor<span class="brand-role">Executive &amp; Operations Assistant</span></a>
+    <a class="btn btn-small btn-secondary" href="index.html#work">Back to portfolio</a>
+  </div>
+</header>
+
+<main id="main">
+  <div class="container">
+    <section class="sample-intro" aria-labelledby="page-title">
+      <p class="tag">Portfolio sample with fictional data</p>
+      <h1 id="page-title">Trust Replenishment Calculator</h1>
+      <p class="sample-lead">Work out what to request from a client, see exactly how the number was built, and copy a client-ready message as a text or an email.</p>
+      <p class="privacy-note">Runs in your browser. Nothing you type is sent or stored.</p>
+    </section>
+
+    <div class="scenario-bar">
+      <span id="scenario-label">Quick scenario</span>
+      <div class="toggle-group" role="group" aria-labelledby="scenario-label">
+        <button class="toggle scenario active" data-scenario="general" type="button">General replenishment</button>
+        <button class="toggle scenario" data-scenario="mediation" type="button">Mediation</button>
+        <button class="toggle scenario" data-scenario="trial" type="button">Trial / hearing</button>
+        <button class="toggle scenario" data-scenario="documents" type="button">Final documents</button>
+      </div>
+    </div>
+
+    <div class="calc-grid">
+      <section class="calc-card" aria-labelledby="inputs-title">
+        <div class="calc-card-head">
+          <h2 id="inputs-title"><span class="step-ball" aria-hidden="true">1</span>Case numbers</h2>
+          <button id="resetBtn" class="link-button" type="button">Reset</button>
+        </div>
+
+        <div class="field-grid">
+          <label class="field field--full">
+            <span class="field-label">Client name</span>
+            <input class="input" id="clientName" type="text" placeholder="Client first name" autocomplete="off">
+          </label>
+          <label class="field field--full">
+            <span class="field-label">Current trust balance</span>
+            <span class="money-input"><span aria-hidden="true">$</span><input id="currentTrust" inputmode="decimal" type="number" min="0" step="0.01" placeholder="0.00" value=""></span>
+          </label>
+          <label class="field">
+            <span class="field-label">Work in progress (unbilled time)</span>
+            <span class="money-input"><span aria-hidden="true">$</span><input id="wip" inputmode="decimal" type="number" min="0" step="0.01" placeholder="0.00"></span>
+          </label>
+          <label class="field">
+            <span class="field-label">Outstanding balance</span>
+            <span class="money-input"><span aria-hidden="true">$</span><input id="outstanding" inputmode="decimal" type="number" min="0" step="0.01" placeholder="0.00"></span>
+          </label>
+          <label class="field">
+            <span class="field-label">Upcoming event</span>
+            <select class="calc-select" id="event">
+              <option>No upcoming event</option>
+              <option>Mediation</option>
+              <option>Trial</option>
+              <option>Hearing</option>
+              <option>Final Documents</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label class="field">
+            <span class="field-label">Required trust amount</span>
+            <span class="money-input"><span aria-hidden="true">$</span><input id="requiredTrust" inputmode="decimal" type="number" min="0" step="0.01" placeholder="0.00"></span>
+          </label>
+          <label class="field field--full">
+            <span class="field-label">Payment link (optional)</span>
+            <input class="input" id="paymentLink" type="url" placeholder="https://">
+          </label>
+        </div>
+
+        <div class="calc-options">
+          <label class="check-row"><input id="includeWip" type="checkbox"><span><b>Include WIP</b><small>Add the work in progress to the requested amount.</small></span></label>
+          <label class="check-row"><input id="includeOutstanding" type="checkbox"><span><b>Include outstanding balance</b><small>Add the outstanding balance to the requested amount.</small></span></label>
+          <div class="additional-row">
+            <label class="check-row"><input id="includeAdditional" type="checkbox"><span><b>Legal team needs additional funds</b><small>For remaining documents or other defined work.</small></span></label>
+            <span class="money-input money-input--compact"><span aria-hidden="true">$</span><input id="additional" inputmode="decimal" type="number" min="0" step="0.01" value="1000.00" aria-label="Additional amount the legal team needs"></span>
+          </div>
+        </div>
+
+        <div id="warning" class="warning" role="status" hidden></div>
+        <button id="calculateBtn" class="btn btn-primary" type="button">Calculate replenishment</button>
+      </section>
+
+      <aside class="calc-card result-card" aria-labelledby="result-title">
+        <div class="calc-card-head">
+          <h2 id="result-title"><span class="step-ball" aria-hidden="true">2</span>Recommendation</h2>
+        </div>
+        <div class="result-figure" aria-live="polite" aria-atomic="true">
+          <p class="result-label">Recommended replenishment</p>
+          <p id="recommended" class="recommended">$0.00</p>
+        </div>
+        <div id="breakdown" class="breakdown">
+          <div><span>Current Trust</span><b>$0.00</b></div>
+          <div><span>Required Trust</span><b>$0.00</b></div>
+          <div><span>Trust Shortfall</span><b>$0.00</b></div>
+          <div><span>Work in Progress</span><b>$0.00</b></div>
+          <div><span>Outstanding Balance</span><b>$0.00</b></div>
+          <div><span>Additional Requirement</span><b>$0.00</b></div>
+        </div>
+        <p id="formula" class="formula">Enter the case numbers to see the calculation.</p>
+      </aside>
+    </div>
+
+    <section class="calc-card message-card" aria-labelledby="message-title">
+      <div class="calc-card-head">
+        <h2 id="message-title"><span class="step-ball" aria-hidden="true">3</span>Client message</h2>
+      </div>
+      <div class="message-controls">
+        <div class="control-group">
+          <span id="format-label">Format</span>
+          <div class="toggle-group" role="group" aria-labelledby="format-label">
+            <button class="toggle format active" data-format="text" type="button">Text message</button>
+            <button class="toggle format" data-format="email" type="button">Email</button>
+          </div>
+        </div>
+        <div class="control-group">
+          <span id="tone-label">Tone for text messages</span>
+          <div class="toggle-group" role="group" aria-labelledby="tone-label">
+            <button class="toggle tone active" data-tone="Professional" type="button">Professional</button>
+            <button class="toggle tone" data-tone="Friendly" type="button">Friendly</button>
+            <button class="toggle tone" data-tone="Direct" type="button">Direct</button>
+            <button class="toggle tone" data-tone="Urgent" type="button">Urgent</button>
+          </div>
+        </div>
+      </div>
+      <label class="sr-only" for="message">Client message</label>
+      <textarea id="message" rows="8" spellcheck="true" placeholder="Your client message will appear here after you calculate."></textarea>
+      <div class="message-actions">
+        <span id="copyStatus" class="copy-status" role="status"></span>
+        <button id="copyMessageBtn" class="btn btn-secondary btn-small" type="button">Copy message</button>
+        <button id="copyResultsBtn" class="btn btn-primary btn-small" type="button">Copy results</button>
+      </div>
+    </section>
+
+    <p class="sample-back"><a class="text-link" href="index.html#work">Back to Jay&rsquo;s work</a></p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p><span class="footer-name">Jay Vedor</span><br>Portfolio sample showing a billing and trust-account workflow. Fictional demo; no data is stored.</p>
+    <ul class="footer-links"><li><a href="index.html">Portfolio</a></li><li><a href="client-billing-tracker.html">Tracker</a></li><li><a href="executive-operations.html">Workspace</a></li></ul>
+  </div>
+</footer>
+</body>
+</html>

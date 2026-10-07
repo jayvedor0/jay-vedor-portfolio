@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Client &amp; Billing Operations Tracker | Jay Vedor</title>
+<meta name="description" content="A working sample by Jay Vedor: track client trust balances, open billing, and next actions for a law firm. Built from a real billing workflow using fictional data.">
+<meta name="theme-color" content="#14213d">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/schibsted-grotesk-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/samples.css">
+<script>document.documentElement.className = 'js';</script>
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/tracker.js" defer></script>
+</head>
+<body class="sample">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">Jay Vedor<span class="brand-role">Executive &amp; Operations Assistant</span></a>
+    <a class="btn btn-small btn-secondary" href="index.html#work">Back to portfolio</a>
+  </div>
+</header>
+
+<main id="main">
+  <div class="container">
+    <section class="sample-intro" aria-labelledby="page-title">
+      <p class="tag">Portfolio sample with fictional data</p>
+      <h1 id="page-title">Client &amp; Billing Operations Tracker</h1>
+      <p class="sample-lead">One view of every client&rsquo;s trust balance, open billing, and next action, built around the trust and billing workflow from my law-firm role. Pick a status to see who needs what.</p>
+      <div class="sample-actions">
+        <a class="btn btn-primary" href="Jay_Vedor_Client_Billing_Operations_Tracker.xlsx" download>Download the spreadsheet (.xlsx)</a>
+      </div>
+    </section>
+
+    <section aria-labelledby="overview-title">
+      <h2 id="overview-title" class="sr-only">Overview</h2>
+      <dl class="kpis">
+        <div class="kpi"><dt>Active clients</dt><dd data-kpi="clients">20</dd></div>
+        <div class="kpi kpi--alert"><dt>Need action</dt><dd data-kpi="action">6</dd></div>
+        <div class="kpi"><dt>Trust to replenish</dt><dd data-kpi="needed">$43,142</dd></div>
+        <div class="kpi"><dt>Open follow-ups</dt><dd>10</dd></div>
+      </dl>
+
+      <div class="dash-grid">
+        <div>
+          <div class="dash-toolbar">
+            <h2 id="accounts-title">Accounts</h2>
+            <div class="toggle-group" role="group" aria-label="Show accounts by status">
+              <button type="button" class="toggle" data-filter="Action Needed" aria-pressed="false">Action needed <span class="count">6</span></button>
+              <button type="button" class="toggle" data-filter="Attention" aria-pressed="false">Attention <span class="count">6</span></button>
+              <button type="button" class="toggle" data-filter="Good" aria-pressed="false">Good <span class="count">8</span></button>
+              <button type="button" class="toggle" data-filter="all" aria-pressed="true">All <span class="count">20</span></button>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><p class="panel-note" id="table-status" role="status">Showing all 20 accounts</p><p class="panel-note">Demo data only</p></div>
+            <div class="table-wrap">
+              <table class="accounts" data-accounts aria-labelledby="accounts-title">
+                <thead><tr><th scope="col">Client</th><th scope="col" class="num">Trust balance</th><th scope="col" class="num">Required trust</th><th scope="col" class="num">Open billing</th><th scope="col" class="num">Amount needed</th><th scope="col">Status</th><th scope="col">Next action</th></tr></thead>
+                <tbody>
+<tr data-status="Action Needed" data-trust="850" data-required="6000" data-outstanding="0" data-wip="340">
+<th scope="row"><span class="client">Client 011</span><span class="matter">Family Matter K</span></th>
+<td class="num" data-label="Trust balance">$850</td>
+<td class="num" data-label="Required trust">$6,000</td>
+<td class="num" data-label="Open billing">$340</td>
+<td class="num needed" data-label="Amount needed" data-needed>$5,490</td>
+<td data-label="Status"><span class="status status--action">Action needed</span></td>
+<td class="wide" data-label="Next action">Escalate replenishment</td>
+</tr>
+<tr data-status="Action Needed" data-trust="760" data-required="5000" data-outstanding="150" data-wip="210">
+<th scope="row"><span class="client">Client 008</span><span class="matter">Family Matter H</span></th>
+<td class="num" data-label="Trust balance">$760</td>
+<td class="num" data-label="Required trust">$5,000</td>
+<td class="num" data-label="Open billing">$360</td>
+<td class="num needed" data-label="Amount needed" data-needed>$4,600</td>
+<td data-label="Status"><span class="status status--action">Action needed</span></td>
+<td class="wide" data-label="Next action">Prepare client billing follow-up</td>
+</tr>
+<tr data-status="Action Needed" data-trust="420" data-required="4000" data-outstanding="0" data-wip="85">
+<th scope="row"><span class="client">Client 005</span><span class="matter">Family Matter E</span></th>
+<td class="num" data-label="Trust balance">$420</td>
+<td class="num" data-label="Required trust">$4,000</td>
+<td class="num" data-label="Open billing">$85</td>
+<td class="num needed" data-label="Amount needed" data-needed>$3,665</td>
+<td data-label="Status"><span class="status status--action">Action needed</span></td>
+<td class="wide" data-label="Next action">Request replenishment</td>
+</tr>
+<tr data-status="Action Needed" data-trust="625" data-required="4000" data-outstanding="0" data-wip="55">
+<th scope="row"><span class="client">Client 014</span><span class="matter">Family Matter N</span></th>
+<td class="num" data-label="Trust balance">$625</td>
+<td class="num" data-label="Required trust">$4,000</td>
+<td class="num" data-label="Open billing">$55</td>
+<td class="num needed" data-label="Amount needed" data-needed>$3,430</td>
+<td data-label="Status"><span class="status status--action">Action needed</span></td>
+<td class="wide" data-label="Next action">Send replenishment request</td>
+</tr>
+<tr data-status="Action Needed" data-trust="250" data-required="3000" data-outstanding="0" data-wip="120">
+<th scope="row"><span class="client">Client 018</span><span class="matter">Family Matter R</span></th>
+<td class="num" data-label="Trust balance">$250</td>
+<td class="num" data-label="Required trust">$3,000</td>
+<td class="num" data-label="Open billing">$120</td>
+<td class="num needed" data-label="Amount needed" data-needed>$2,870</td>
+<td data-label="Status"><span class="status status--action">Action needed</span></td>
+<td class="wide" data-label="Next action">Request immediate replenishment</td>
+</tr>
+<tr data-status="Action Needed" data-trust="975" data-required="3000" data-outstanding="0" data-wip="0">
+<th scope="row"><span class="client">Client 002</span><span class="matter">Family Matter B</span></th>
+<td class="num" data-label="Trust balance">$975</td>
+<td class="num" data-label="Required trust">$3,000</td>
+<td class="num" data-label="Open billing">$0</td>
+<td class="num needed" data-label="Amount needed" data-needed>$2,025</td>
+<td data-label="Status"><span class="status status--action">Action needed</span></td>
+<td class="wide" data-label="Next action">Send replenishment request</td>
+</tr>
+<tr data-status="Attention" data-trust="1325" data-required="5000" data-outstanding="0" data-wip="0">
+<th scope="row"><span class="client">Client 020</span><span class="matter">Family Matter T</span></th>
+<td class="num" data-label="Trust balance">$1,325</td>
+<td class="num" data-label="Required trust">$5,000</td>
+<td class="num" data-label="Open billing">$0</td>
+<td class="num needed" data-label="Amount needed" data-needed>$3,675</td>
+<td data-label="Status"><span class="status status--attention">Attention</span></td>
+<td class="wide" data-label="Next action">Review before upcoming hearing</td>
+</tr>
+<tr data-status="Attention" data-trust="1650" data-required="4000" data-outstanding="0" data-wip="0">
+<th scope="row"><span class="client">Client 016</span><span class="matter">Family Matter P</span></th>
+<td class="num" data-label="Trust balance">$1,650</td>
+<td class="num" data-label="Required trust">$4,000</td>
+<td class="num" data-label="Open billing">$0</td>
+<td class="num needed" data-label="Amount needed" data-needed>$2,350</td>
+<td data-label="Status"><span class="status status--attention">Attention</span></td>
+<td class="wide" data-label="Next action">Confirm required trust amount</td>
+</tr>
+<tr data-status="Attention" data-trust="1890" data-required="4000" data-outstanding="72" data-wip="0">
+<th scope="row"><span class="client">Client 003</span><span class="matter">Family Matter C</span></th>
+<td class="num" data-label="Trust balance">$1,890</td>
+<td class="num" data-label="Required trust">$4,000</td>
+<td class="num" data-label="Open billing">$72</td>
+<td class="num needed" data-label="Amount needed" data-needed>$2,182</td>
+<td data-label="Status"><span class="status status--attention">Attention</span></td>
+<td class="wide" data-label="Next action">Review account before next event</td>
+</tr>
+<tr data-status="Attention" data-trust="2150" data-required="4000" data-outstanding="0" data-wip="0">
+<th scope="row"><span class="client">Client 006</span><span class="matter">Family Matter F</span></th>
+<td class="num" data-label="Trust balance">$2,150</td>
+<td class="num" data-label="Required trust">$4,000</td>
+<td class="num" data-label="Open billing">$0</td>
+<td class="num needed" data-label="Amount needed" data-needed>$1,850</td>
+<td data-label="Status"><span class="status status--attention">Attention</span></td>
+<td class="wide" data-label="Next action">Confirm next milestone</td>
+</tr>
+<tr data-status="Attention" data-trust="1180" data-required="3000" data-outstanding="0" data-wip="0">
+<th scope="row"><span class="client">Client 013</span><span class="matter">Family Matter M</span></th>
+<td class="num" data-label="Trust balance">$1,180</td>
+<td class="num" data-label="Required trust">$3,000</td>
+<td class="num" data-label="Open billing">$0</td>
+<td class="num needed" data-label="Amount needed" data-needed>$1,820</td>
+<td data-label="Status"><span class="status status--attention">Attention</span></td>
+<td class="wide" data-label="Next action">Follow up after consultation</td>
+</tr>
+<tr data-status="Attention" data-trust="1425" data-required="3000" data-outstanding="0" data-wip="0">
+<th scope="row"><span class="client">Client 009</span><span class="matter">Family Matter I</span></th>
+<td class="num" data-label="Trust balance">$1,425</td>
+<td class="num" data-label="Required trust">$3,000</td>
+<td class="num" data-label="Open billing">$0</td>
+<td class="num needed" data-label="Amount needed" data-needed>$1,575</td>
+<td data-label="Status"><span class="status status--attention">Attention</span></td>
+<td class="wide" data-label="Next action">Review trust target</td>
+</tr>
+<tr data-status="Good" data-trust="2750" data-required="5000" data-outstanding="0" data-wip="0">
+<th scope="row"><span class="client">Client 015</span><span class="matter">Family Matter O</span></th>
+<td class="num" data-label="Trust balance">$2,750</td>
+<td class="num" data-label="Required trust">$5,000</td>
+<td class="num" data-label="Open billing">$0</td>
+<td class="num needed" data-label="Amount needed" data-needed>$2,250</td>
+<td data-label="Status"><span class="status status--good">Good</span></td>
+<td class="wide" data-label="Next action">Monitor trust balance</td>
+</tr>
+<tr data-status="Good" data-trust="2000" data-required="4000" data-outstanding="0" data-wip="0">
+<th scope="row"><span class="client">Client 010</span><span class="matter">Family Matter J</span></th>
+<td class="num" data-label="Trust balance">$2,000</td>
+<td class="num" data-label="Required trust">$4,000</td>
+<td class="num" data-label="Open billing">$0</td>
+<td class="num needed" data-label="Amount needed" data-needed>$2,000</td>
+<td data-label="Status"><span class="status status--good">Good</span></td>
+<td class="wide" data-label="Next action">Monitor trust balance</td>
+</tr>
+<tr data-status="Good" data-trust="2400" data-required="4000" data-outstanding="0" data-wip="0">
+<th scope="row"><span class="client">Client 019</span><span class="matter">Family Matter S</span></th>
+<td class="num" data-label="Trust balance">$2,400</td>
+<td class="num" data-label="Required trust">$4,000</td>
+<td class="num" data-label="Open billing">$0</td>
+<td class="num needed" data-label="Amount needed" data-needed>$1,600</td>
+<td data-label="Status"><span class="status status--good">Good</span></td>
+<td class="wide" data-label="Next action">Monitor trust balance</td>
+</tr>
+<tr data-status="Good" data-trust="3150" data-required="4000" data-outstanding="0" data-wip="125">
+<th scope="row"><span class="client">Client 001</span><span class="matter">Family Matter A</span></th>
+<td class="num" data-label="Trust balance">$3,150</td>
+<td class="num" data-label="Required trust">$4,000</td>
+<td class="num" data-label="Open billing">$125</td>
+<td class="num needed" data-label="Amount needed" data-needed>$975</td>
+<td data-label="Status"><span class="status status--good">Good</span></td>
+<td class="wide" data-label="Next action">Monitor trust balance</td>
+</tr>
+<tr data-status="Good" data-trust="3500" data-required="4000" data-outstanding="0" data-wip="0">
+<th scope="row"><span class="client">Client 012</span><span class="matter">Family Matter L</span></th>
+<td class="num" data-label="Trust balance">$3,500</td>
+<td class="num" data-label="Required trust">$4,000</td>
+<td class="num" data-label="Open billing">$0</td>
+<td class="num needed" data-label="Amount needed" data-needed>$500</td>
+<td data-label="Status"><span class="status status--good">Good</span></td>
+<td class="wide" data-label="Next action">Monitor trust balance</td>
+</tr>
+<tr data-status="Good" data-trust="2740" data-required="3000" data-outstanding="0" data-wip="0">
+<th scope="row"><span class="client">Client 004</span><span class="matter">Family Matter D</span></th>
+<td class="num" data-label="Trust balance">$2,740</td>
+<td class="num" data-label="Required trust">$3,000</td>
+<td class="num" data-label="Open billing">$0</td>
+<td class="num needed" data-label="Amount needed" data-needed>$260</td>
+<td data-label="Status"><span class="status status--good">Good</span></td>
+<td class="wide" data-label="Next action">Monitor trust balance</td>
+</tr>
+<tr data-status="Good" data-trust="3985" data-required="4000" data-outstanding="0" data-wip="0">
+<th scope="row"><span class="client">Client 007</span><span class="matter">Family Matter G</span></th>
+<td class="num" data-label="Trust balance">$3,985</td>
+<td class="num" data-label="Required trust">$4,000</td>
+<td class="num" data-label="Open billing">$0</td>
+<td class="num needed" data-label="Amount needed" data-needed>$15</td>
+<td data-label="Status"><span class="status status--good">Good</span></td>
+<td class="wide" data-label="Next action">No action required</td>
+</tr>
+<tr data-status="Good" data-trust="3990" data-required="4000" data-outstanding="0" data-wip="0">
+<th scope="row"><span class="client">Client 017</span><span class="matter">Family Matter Q</span></th>
+<td class="num" data-label="Trust balance">$3,990</td>
+<td class="num" data-label="Required trust">$4,000</td>
+<td class="num" data-label="Open billing">$0</td>
+<td class="num needed" data-label="Amount needed" data-needed>$10</td>
+<td data-label="Status"><span class="status status--good">Good</span></td>
+<td class="wide" data-label="Next action">No action required</td>
+</tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <aside class="dash-aside">
+          <div class="panel">
+            <div class="panel-head"><h2>Account health</h2></div>
+            <ul class="health">
+              <li><div class="health-row"><span>Action needed</span><strong>6</strong></div><span class="bar"><span class="bar-fill bar-fill--action" style="--w:30%"></span></span><p>Replenishment or urgent follow-up</p></li>
+              <li><div class="health-row"><span>Attention</span><strong>6</strong></div><span class="bar"><span class="bar-fill bar-fill--attention" style="--w:30%"></span></span><p>Review or confirm</p></li>
+              <li><div class="health-row"><span>Good</span><strong>8</strong></div><span class="bar"><span class="bar-fill bar-fill--good" style="--w:40%"></span></span><p>Routine monitoring</p></li>
+            </ul>
+          </div>
+          <div class="formula-box">
+            <h3>How each amount is calculated</h3>
+            <p><code>Amount needed = MAX(Required trust &minus; Trust balance + Outstanding + WIP, 0)</code></p>
+            <p>Open billing is outstanding balance plus unbilled work in progress. The same formula runs in the spreadsheet.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <ol class="sample-explain">
+      <li><h2>See the signal</h2><p>Balances, unbilled work, outstanding amounts, and status sit together instead of across separate notes and inboxes.</p></li>
+      <li><h2>Calculate the gap</h2><p>Each account&rsquo;s amount needed is calculated against its required trust target, including open billing.</p></li>
+      <li><h2>Turn it into action</h2><p>Status and next-action fields turn the sheet into a follow-up queue rather than a passive record.</p></li>
+    </ol>
+
+    <p class="sample-back"><a class="text-link" href="index.html#work">Back to Jay&rsquo;s work</a></p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p><span class="footer-name">Jay Vedor</span><br>Fictional portfolio sample. Built to show workflow and organization, not live client records.</p>
+    <ul class="footer-links"><li><a href="index.html">Portfolio</a></li><li><a href="trust-replenishment-calculator.html">Calculator</a></li><li><a href="executive-operations.html">Workspace</a></li></ul>
+  </div>
+</footer>
+</body>
+</html>
